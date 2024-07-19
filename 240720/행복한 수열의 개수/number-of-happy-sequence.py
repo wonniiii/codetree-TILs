@@ -11,9 +11,9 @@ def cal(array, count):
         if array[i] == a[-1]:
             flag += 1
         else:
+            flag = 1
             a.append(array[i])
         if flag == count:
-            flag = 1
             return True
             break
     return False
@@ -21,8 +21,10 @@ def cal(array, count):
 res = 0
 for i in range(n):
     if cal(arr[i], m):
+        print(arr[i])
         res += 1
 for j in range(n):
     if cal(list(zip(*arr))[j], m):
+        print(list(zip(*arr))[j])
         res += 1
 print(res)
