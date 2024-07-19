@@ -4,6 +4,8 @@ a = []
 
 def cal(array, count):
     a = [array[0]]
+    if len(array) == 1:
+        return True
     flag = 1
     for i in range(1, len(array)):
         if array[i] == a[-1]:
@@ -19,7 +21,6 @@ for i in range(n):
     if cal(arr[i], m):
         res += 1
 for j in range(n):
-
     if cal(list(zip(*arr))[j], m):
         res += 1
 print(res)
