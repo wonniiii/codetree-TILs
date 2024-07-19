@@ -14,6 +14,7 @@ def cal(array, count):
             a.append(array[i])
         if flag == count:
             return True
+            break
     return False
 
 res = 0
