@@ -4,12 +4,14 @@ r,c = map(int, input().split())
 r -= 1
 c -= 1
 temp = []
-count = arr[r-1][c-1] - 1
-res = [[0 for j in range(n)] for i in range(n)]
 
-for i in range(r-count, r+count+1):
+# 폭탄의 크기
+count = arr[r][c] - 1
+
+# 십자 모양으로 폭탄 터트리기
+for i in range(max(0, r-count), min(n, r+count+1)):
     arr[i][c] = 0
-for j in range(c-count, c+count+1):
+for j in range(max(0, c-count), min(n, c+count+1)):
     arr[r][j] = 0
 
 for col in range(n):
