@@ -13,6 +13,7 @@ for i in range(t):
     
     a1[0] = temp[1]
     a2[0] = temp[0]
-    temp.clear()
+    temp = [0,0]
+    
 print(*a1, sep = " ") 
 print(*a2, sep = " ")
