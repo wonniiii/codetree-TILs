@@ -5,7 +5,12 @@
 |[Intermediate Low / Simulation / 격자 안에서 단일 객체를 이동](https://www.codetree.ai/missions?missionId=2)|40xp|![쉬움][easy]|
 
 
-
+# 풀이
+  - next를 고려하지 않고 수직으로만 떨어지기 때문에, 블록을 한칸씩 내렸을때, 가로로 1과 겹치는 부분이 있는지 확인
+    
+# 알게된 점
+  - 2차원 배열 선언 -> "arr = [list(map(int, input().split())) for _ in range(n)]"
+  - 2차원 배열 행, 열과 x,y 좌표는 반대
 
 
 
