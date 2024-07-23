@@ -5,7 +5,11 @@
 |[Intermediate Low / Simulation / 격자 안에서 단일 객체를 이동](https://www.codetree.ai/missions?missionId=2)|40xp|![쉬움][easy]|
 
 
+# 풀이
+  - 상하좌우로 인접한 좌표로 이동하려면 dx, dy 기법 사용
 
+# 알게된 점
+  - python은 크기가 같은 두개의 배열을 zip으로 묶어서 사용할 수 있다.
 
 
 
