@@ -17,9 +17,6 @@ def can_go(x,y):
     return True
 
 def dfs(x,y):
-    if x == n-1 and y == m-1:
-        return 1
-
     dxs, dys = [0,1], [1,0]
 
     visited[x][y] = 1
