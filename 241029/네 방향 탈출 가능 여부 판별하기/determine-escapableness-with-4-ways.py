@@ -41,9 +41,9 @@ def bfs():
             next_x, next_y = x+dx, y+dy
 
             if can_go(next_x, next_y):
-                push(next_x, next_y)
+                push((next_x, next_y))
     
-push(0,0)
+push((0,0))
 bfs()
 if visited[m-1][n-1] == 1:
     print(1)
