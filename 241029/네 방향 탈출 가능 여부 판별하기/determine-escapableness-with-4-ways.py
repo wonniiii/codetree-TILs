@@ -16,11 +16,12 @@ order = 1
 q = deque()
 
 def is_range(x,y):
-    return 0<=x<n and 0<=y<m
+    return 0<=x<m and 0<=y<n
 
 def push(x,y):
     global order
     grid[x][y] = order
+    order += 1
     visited[x][y]= True
     q.append((x,y))
 
