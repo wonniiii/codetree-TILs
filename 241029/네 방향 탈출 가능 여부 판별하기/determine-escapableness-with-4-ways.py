@@ -16,7 +16,7 @@ order = 1
 q = deque()
 
 def is_range(x,y):
-    return 0<=x<m and 0<=y<n
+    return 0<=x<n and 0<=y<m
 
 def push(x,y):
     global order
@@ -41,11 +41,11 @@ def bfs():
             next_x, next_y = x+dx, y+dy
 
             if can_go(next_x, next_y):
-                push((next_x, next_y))
+                push(next_x, next_y)
     
-push((0,0))
+push(0,0)
 bfs()
-if visited[m-1][n-1] == 1:
+if visited[n-1][m-1] == 1:
     print(1)
 else:
     print(0)
