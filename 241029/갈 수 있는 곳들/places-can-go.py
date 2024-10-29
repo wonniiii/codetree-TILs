@@ -14,7 +14,7 @@ visited = [
 
 q = deque()
 order = 1
-result = k
+result = 0
 
 def is_range(x,y):
     return 0<=x<n and 0<=y<n
@@ -27,11 +27,10 @@ def can_go(x,y):
     return True
 
 def push(x,y):
-    global order
-    grid[x][y] = order
-    order += 1
+    global result
     visited[x][y] = True
     q.append((x,y))
+    result += 1
 
 def bfs():
     dxs, dys = [1,-1,0,0], [0,0,-1,1]
@@ -44,12 +43,10 @@ def bfs():
 
             if can_go(next_x, next_y):
                 push(next_x, next_y)
-                count += 1
-    return count
 
 for _ in range(k):
     x,y = map(int, input().split())
     push(x-1,y-1)
-    result += bfs()
+    bfs()
 
 print(result)
