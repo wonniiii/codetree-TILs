@@ -47,6 +47,7 @@ def bfs():
 for _ in range(k):
     x,y = map(int, input().split())
     push(x-1,y-1)
+    visited[x-1][y-1] = True 
     bfs()
 
 print(result)
