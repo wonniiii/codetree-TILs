@@ -40,9 +40,9 @@ def bfs():
             if can_go(next_x, next_y):
                 push(next_x, next_y, step[x][y]+1)
 
-push(start_x, start_y,0)
+push(start_x, start_y,1)
 bfs()
-if step[end_x][end_y] == 0 and visited[x][y] == False:
+if step[end_x][end_y] == 0:
     print(-1)
 else:
-    print(step[end_x][end_y])
+    print(step[end_x][end_y]-1)
