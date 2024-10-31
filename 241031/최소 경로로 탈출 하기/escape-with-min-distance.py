@@ -42,4 +42,7 @@ def bfs():
 
 push(0,0,0)
 bfs()
-print(step[n-1][m-1])
+if step[n-1][m-1] == 0:
+    print(-1)
+else:
+    print(step[n-1][m-1])
