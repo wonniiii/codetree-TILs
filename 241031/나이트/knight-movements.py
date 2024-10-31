@@ -42,7 +42,7 @@ def bfs():
 
 push(start_x, start_y,0)
 bfs()
-if step[end_x][end_y] == 0:
+if step[end_x][end_y] == 0 and visited[x][y] == False:
     print(-1)
 else:
     print(step[end_x][end_y])
