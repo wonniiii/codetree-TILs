@@ -55,64 +55,42 @@ def bfs():
                 bfs_q.append((new_x, new_y))
                 visited[new_x][new_y] = True
             
-
-# best 위치를 새로운 위치로 바꿔줘야 하는지를 판단합니다.
-def need_update(best_pos, new_pos):
-    # 첫 도달 가능한 위치라면
-    # update가 필요합니다.
+def need_move(best_pos, new_pos):
     if best_pos == NOT_EXISTS:
         return True
-    
     best_x, best_y = best_pos
-    new_x, new_y = new_pos
-    
-    # 숫자, -행, -열 순으로 더 큰 곳이 골라져야 합니다.
+    new_x ,new_y = new_pos
+
     return (grid[new_x][new_y], -new_x, -new_y) > \
            (grid[best_x][best_y], -best_x, -best_y)
-
-
-# 가장 우선순위가 높은 위치를 찾아
-# 위치를 이동합니다.
 def move():
     global curr_cell
-    
-    # BFS 탐색을 위한 초기화 작업을 수행합니다.
+
     initialize_visited()
-    
-    # Step1. BFS를 진행하여 갈 수 있는 모든 위치를 탐색합니다.
+
     bfs()
-    
-    # Step2. 
-    # 도달 할 수 있는 위치들 중
-    # 가장 우선순위가 높은 위치를 구합니다.
+
     best_pos = NOT_EXISTS
     for i in range(n):
         for j in range(n):
-            # 도달이 불가능하거나 현재 위치는 건너뜁니다.
-            if not visited[i][j] or (i, j) == curr_cell:
+            if not visited[i][j] or (i,j) == curr_cell:
                 continue
-            
-            new_pos = (i, j)
-            if need_update(best_pos, new_pos):
+            new_pos = (i,j)
+            if need_move(best_pos, new_pos):
                 best_pos = new_pos
 
-    # Step3. 위치를 이동합니다.
-    
-    # 만약 움직일 위치가 없다면 종료합니다.
     if best_pos == NOT_EXISTS:
         return False
-    # 움직일 위치가 있다면 이동합니다.
     else:
         curr_cell = best_pos
         return True
 
-# k번에 걸쳐 움직이는 것을 반복합니다.
 for _ in range(k):
-    is_moved = move()
+    is_move = move()
 
-    # 움직이지 못했다면 바로 종료합니다.
-    if not is_moved:
+    if not is_move:
         break
+
 
 final_x, final_y = curr_cell
 print(final_x + 1, final_y + 1)
