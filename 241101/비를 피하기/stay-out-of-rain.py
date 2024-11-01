@@ -66,6 +66,7 @@ for human in human_pos:
         space_x, space_y = space
         push(human_x,human_y,0)
         bfs()
+        initalArr()
         if res[human_x][human_y] > step[space_x][space_y]:
             res[human_x][human_y] = step[space_x][space_y]
     
