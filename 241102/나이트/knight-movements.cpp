@@ -55,7 +55,7 @@ int main() {
     cin >> n;
 
     visited.resize(n,vector<bool>(n,false));
-    step.resize(n,vector<int>(n,0));
+    step.resize(n,vector<int>(n,-1));
 
     int arr[4];
     for(int i = 0; i<4; i++) {
@@ -66,10 +66,8 @@ int main() {
     Push(arr[0]-1, arr[1]-1, 0);
     BFS(); // BFS 함수 호출 추가
 
-    if(step[arr[2]-1][arr[3]-1] == 0) {
-        cout << -1;
-    } else {
-        cout << step[arr[2]-1][arr[3]-1];
-    }
+    
+    cout << step[arr[2]-1][arr[3]-1];
+    
     return 0;
 }
