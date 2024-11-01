@@ -33,14 +33,8 @@ int main() {
             step[i][j] = max(step[i-1][j], step[i][j-1]) + grid[i][j];
         }
     }
-    int max = -1;
-    for(int i =1; i<n; i++) {
-        if(step[n-1][i]> max) {
-            max = step[n-1][i];
-        }
-    }
 
-   cout << max;
+   cout << step[n-1][n-1];
 
     return 0;
 }
