@@ -61,16 +61,15 @@ def bfs():
 
 for human in human_pos:
     human_x, human_y = human
-
+    initalArr()
+    push(human_x,human_y,0)
+    bfs()
     for space in space_pos:
-        space_x, space_y = space
-        push(human_x,human_y,0)
-        bfs()
-        initalArr()
+        space_x, space_y = space    
         if res[human_x][human_y] > step[space_x][space_y]:
             res[human_x][human_y] = step[space_x][space_y]
     
-    if res[human_x][human_y] == 101:
+    if step[space_x][space_y] == 0:
         res[human_x][human_y] = -1
            
 for i in range(n):
