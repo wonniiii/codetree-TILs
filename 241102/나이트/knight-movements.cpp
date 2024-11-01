@@ -67,7 +67,7 @@ int main() {
     BFS(); // BFS 함수 호출 추가
 
     if(step[arr[2]-1][arr[3]-1] == 0) {
-        cout << 1;
+        cout << -1;
     } else {
         cout << step[arr[2]-1][arr[3]-1];
     }
