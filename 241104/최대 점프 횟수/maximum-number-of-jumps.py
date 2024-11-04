@@ -1,7 +1,14 @@
+import sys
+INT_MIN = -sys.maxsize
+
 n = int(input())
 arr = list(map(int, input().split()))
 dp = [0] * n
 
+for i in range(n):
+    dp[i] = INT_MIN
+
+dp[0] = 0
 for i in range(1,n):
     for j in range(0,i):
         if j + arr[j] >= i:
